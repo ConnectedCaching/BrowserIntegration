@@ -17,7 +17,8 @@
 	}],
 
 	"web_accessible_resources": [
-		"extractors/opencaching.com.js"
+		"extractors/opencaching.com.detail.cc.js",
+		"extractors/opencaching.com.map.cc.js"
 	],
 	
 	"page_action": {
@@ -27,7 +28,7 @@
 	
 	"permissions": [
 		"tabs",
-		"http://www.opencaching.com/*/#!geocache/*"
+		"http://www.opencaching.com/*"
 	]
 
 }

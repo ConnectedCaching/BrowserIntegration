@@ -15,12 +15,13 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
 	// opencaching.com geocache detail page
 	if (tab.url.match(/http\:\/\/www\.opencaching\.com\/.*\/#!geocache\/.*/i)) {
 		chrome.pageAction.show(tabId);
-		injectExtractor('extractors/opencaching.com.js');
+		injectExtractor('extractors/opencaching.com.detail.cc.js');
 	}
 
 	// opencaching.com map view
-	//if (currentUrl.match()) {
-	//	chrome.pageAction.show(currentTabId);
-	//}
+	if (tab.url.match(/http:\/\/www.opencaching.com\/.*\/#find.*/i)) {
+		chrome.pageAction.show(tabId);
+		injectExtractor('extractors/opencaching.com.map.cc.js');
+	}
 
 });

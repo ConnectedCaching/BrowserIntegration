@@ -21,7 +21,7 @@ window.CC_EXTRACTOR = {
 
 	destroy: function() {
 		console.log('Removing extractors');
-		$j("script[src$=\'.com.js\']").remove();
+		$j("script[src$=\'.cc.js\']").remove();
 		delete window.CC_EXTRACTOR;
 	}
 
