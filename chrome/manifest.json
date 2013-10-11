@@ -9,6 +9,16 @@
 	"background": {
 		"scripts": ["background.js"] 
 	},
+
+	"content_scripts": [{
+		"matches": ["http://www.opencaching.com/*"],
+		"js": ["jquery-2.0.3.min.js", "contentscript.js"],
+		"run_at": "document_end"
+	}],
+
+	"web_accessible_resources": [
+		"extractors/opencaching.com.js"
+	],
 	
 	"page_action": {
 		"default_icon": "icon.png",
