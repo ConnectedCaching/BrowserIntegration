@@ -17,6 +17,12 @@ window.CC_EXTRACTOR = {
 
 		window.postMessage({ type: "extracted_preview", data: result }, "*");
 
+	},
+
+	destroy: function() {
+		console.log('Removing extractors');
+		$j("script[src$=\'.com.js\']").remove();
+		delete window.CC_EXTRACTOR;
 	}
 
 };
