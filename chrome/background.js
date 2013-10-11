@@ -5,6 +5,8 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
 		chrome.tabs.sendMessage(tabId, {type: 'inject_extractor', file: fileName});
 	};
 
+	if (!changeInfo.status) return;
+
 	console.log(changeInfo.status + ' ' + tab.url);
 	chrome.pageAction.hide(tabId);
 
