@@ -1,10 +1,5 @@
 chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
 
-	var injectExtractor = function(fileName) {
-		console.log('trigger injection of ' + fileName);
-		chrome.tabs.sendMessage(tabId, {type: 'inject_extractor', file: fileName});
-	};
-
 	if (!changeInfo.status) return;
 
 	console.log(changeInfo.status + ' ' + tab.url);
@@ -15,13 +10,13 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
 	// opencaching.com geocache detail page
 	if (tab.url.match(/http\:\/\/www\.opencaching\.com\/.*\/#!geocache\/.*/i)) {
 		chrome.pageAction.show(tabId);
-		injectExtractor('extractors/opencaching.com.detail.cc.js');
+		chrome.tabs.executeScript(tabId, {file: "extractors/opencaching.com.detail.js"});
 	}
 
 	// opencaching.com map view
 	if (tab.url.match(/http:\/\/www.opencaching.com\/.*\/#find.*/i)) {
 		chrome.pageAction.show(tabId);
-		injectExtractor('extractors/opencaching.com.map.cc.js');
+		chrome.tabs.executeScript(tabId, {file: "extractors/opencaching.com.map.js"});
 	}
 
 });
