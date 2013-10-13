@@ -11,14 +11,18 @@
 	},
 
 	"content_scripts": [{
-		"matches": ["http://www.opencaching.com/*"],
+		"matches": [
+			"http://www.opencaching.com/*",
+			"http://www.geocaching.com/geocache/*"
+		],
 		"js": ["jquery-2.0.3.min.js", "contentscript.js"],
 		"run_at": "document_end"
 	}],
 
 	"web_accessible_resources": [
 		"extractors/opencaching.com.detail.cc.js",
-		"extractors/opencaching.com.map.cc.js"
+		"extractors/opencaching.com.map.cc.js",
+		"extractors/geocaching.com.detail.js"
 	],
 	
 	"page_action": {
@@ -30,7 +34,8 @@
 		"tabs",
 		"cookies",
 		"http://localhost/*",
-		"http://www.opencaching.com/*"
+		"http://www.opencaching.com/*",
+		"http://www.geocaching.com/geocache/*"
 	]
 
 }

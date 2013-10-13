@@ -19,4 +19,10 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
 		chrome.tabs.executeScript(tabId, {file: "extractors/opencaching.com.map.js"});
 	}
 
+	// geocaching.com detail page
+	if (tab.url.match(/http:\/\/www.geocaching.com\/geocache\/.*/i)) {
+		chrome.pageAction.show(tabId);
+		chrome.tabs.executeScript(tabId, {file: "extractors/geocaching.com.detail.js"});
+	}
+
 });

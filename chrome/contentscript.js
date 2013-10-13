@@ -3,7 +3,19 @@ var injectJs = function(command) {
 }
 
 chrome.runtime.onMessage.addListener(function(message, sender, sendResult) {
+	
+	var extractor = window.CC_EXTRACTOR;
+
 	if (message.type == 'extract_preview') {
-		sendResult(window.CC_EXTRACTOR.extractPreview());
+		sendResult(extractor.extractPreview());
 	}
+
+	if (message.type == 'target_auth_check') {
+		sendResult({
+			authRequired: extractor.targetAuthRequired(),
+			platformName: extractor.platformName(),
+			targetAuthUrl: extractor.targetAuthUrl()
+		});
+	}
+
 });
