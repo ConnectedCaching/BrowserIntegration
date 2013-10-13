@@ -15,8 +15,7 @@
 			"http://www.opencaching.com/*",
 			"http://www.geocaching.com/geocache/*"
 		],
-		"js": ["jquery-2.0.3.min.js", "contentscript.js"],
-		"run_at": "document_end"
+		"js": ["jquery-2.0.3.min.js", "contentscript.js"]
 	}],
 
 	"web_accessible_resources": [

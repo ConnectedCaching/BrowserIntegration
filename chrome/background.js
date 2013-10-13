@@ -14,13 +14,19 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
 	}
 
 	// opencaching.com map view
-	if (tab.url.match(/http:\/\/www.opencaching.com\/.*\/#find.*/i)) {
+	if (tab.url.match(/http:\/\/www\.opencaching\.com\/.*\/#find.*/i)) {
 		chrome.pageAction.show(tabId);
 		chrome.tabs.executeScript(tabId, {file: "extractors/opencaching.com.map.js"});
 	}
 
 	// geocaching.com detail page
-	if (tab.url.match(/http:\/\/www.geocaching.com\/geocache\/.*/i)) {
+	if (tab.url.match(/http:\/\/www\.geocaching\.com\/geocache\/.*/i)) {
+		chrome.pageAction.show(tabId);
+		chrome.tabs.executeScript(tabId, {file: "extractors/geocaching.com.detail.js"});
+	}
+	
+	// geocaching.com detail page (alternative url)
+	if (tab.url.match(/http:\/\/www\.geocaching\.com\/seek\/cache_details\.aspx.*/i)) {
 		chrome.pageAction.show(tabId);
 		chrome.tabs.executeScript(tabId, {file: "extractors/geocaching.com.detail.js"});
 	}
