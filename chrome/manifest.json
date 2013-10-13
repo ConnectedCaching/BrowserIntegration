@@ -28,6 +28,8 @@
 	
 	"permissions": [
 		"tabs",
+		"cookies",
+		"http://localhost/*",
 		"http://www.opencaching.com/*"
 	]
 
