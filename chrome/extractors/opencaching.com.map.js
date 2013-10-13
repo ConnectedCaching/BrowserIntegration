@@ -1,5 +1,17 @@
 window.CC_EXTRACTOR = {
+	
+	platformName: function() {
+		return 'Opencaching.com'
+	},
 
+	targetAuthRequired: function() {
+		return false;
+	},
+
+	targetAuthUrl: function() {
+		return '';
+	},
+	
 	extractPreview: function() {
 
 		var result = [];

@@ -10,7 +10,7 @@ window.CC_EXTRACTOR = {
 
 	targetAuthUrl: function() {
 		return '';
-	}
+	},
 
 	extractPreview: function() {
 
