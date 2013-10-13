@@ -1,7 +1,7 @@
 window.CC_EXTRACTOR = {
 
 	platformName: function() {
-		return 'Geocaching.com'
+		return 'Geocaching.com';
 	},
 
 	targetAuthRequired: function() {
@@ -20,10 +20,10 @@ window.CC_EXTRACTOR = {
 
 		if (this.targetAuthRequired()) return [];
 
-		var cache_id = $('#cache_oxcode').first().text();
-		var cache_title = $('#geocache_name > h2 > div').first().text();
+		var cache_id = $('#ctl00_ContentBody_CoordInfoLinkControl1_uxCoordInfoCode').text();
+		var cache_title = $('#ctl00_ContentBody_CacheName').text();
 
-		return  [{
+		return [{
 			geocache_id: cache_id,
 			geocache_title: cache_title
 		}];
