@@ -10,11 +10,11 @@ chrome.runtime.onMessage.addListener(function(message, sender, sendResult) {
 		sendResult(extractor.extractPreview());
 	}
 
-	if (message.type == 'target_auth_check') {
+	if (message.type == 'platform_auth_check') {
 		sendResult({
-			authRequired: extractor.targetAuthRequired(),
+			platformAuthRequired: extractor.platformAuthRequired(),
 			platformName: extractor.platformName(),
-			targetAuthUrl: extractor.targetAuthUrl()
+			platformAuthUrl: extractor.platformAuthUrl()
 		});
 	}
 

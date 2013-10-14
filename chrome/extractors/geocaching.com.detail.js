@@ -4,12 +4,12 @@ window.CC_EXTRACTOR = {
 		return 'Geocaching.com';
 	},
 
-	targetAuthRequired: function() {
+	platformAuthRequired: function() {
 		return $('#hlSignIn').size() === 1;
 	},
 
-	targetAuthUrl: function() {
-		if (this.targetAuthRequired()) {
+	platformAuthUrl: function() {
+		if (this.platformAuthRequired()) {
 			var gcCode = $('#ctl00_ContentBody_CoordInfoLinkControl1_uxCoordInfoCode').text();
 			return "https://www.geocaching.com/login/default.aspx?redir=%2fseek%2fcache_details.aspx%3fwp%3d" + gcCode;
 		}
@@ -18,7 +18,7 @@ window.CC_EXTRACTOR = {
 
 	extractPreview: function() {
 
-		if (this.targetAuthRequired()) return [];
+		if (this.platformAuthRequired()) return [];
 
 		var cache_id = $('#ctl00_ContentBody_CoordInfoLinkControl1_uxCoordInfoCode').text();
 		var cache_title = $('#ctl00_ContentBody_CacheName').text();

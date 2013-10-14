@@ -4,11 +4,11 @@ window.CC_EXTRACTOR = {
 		return 'Opencaching.com'
 	},
 
-	targetAuthRequired: function() {
+	platformAuthRequired: function() {
 		return false;
 	},
 
-	targetAuthUrl: function() {
+	platformAuthUrl: function() {
 		return '';
 	},
 	
