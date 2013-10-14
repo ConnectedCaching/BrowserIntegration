@@ -2,7 +2,8 @@
 function displayLoginWarning() {
 	$('#signInWarning').show();
 	$('#signInLink').on('click', function() {
-		//
+		chrome.tabs.create({url: 'http://auth.connectedcaching.net', active: true});
+		window.close();
 	});
 }
 
