@@ -7,7 +7,11 @@ function displayLoginWarning() {
 // display a warning that the user has to sign in to the target site
 function displayTargetAuthWarning(platformName, authUrl) {
 	$('main').prepend('<section class="card"><h1><strong class="warning">Sign In Required</strong></h1><h2>' + 
-		'Please <a href="' + authUrl + '" class="warning">sign in</a> to your ' + platformName + ' account!</h2></section>');
+		'Please <a href="#" class="warning" id="platformSignIn">sign in</a> to your ' + platformName + ' account!</h2></section>');
+	$('#platformSignIn').on('click', function() {
+		chrome.tabs.update({url: authUrl});
+		window.close();
+	});
 }
 
 document.addEventListener('DOMContentLoaded', function () {
