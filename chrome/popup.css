@@ -37,6 +37,10 @@ main {
 	margin: 0;
 }
 
+.hidden {
+	display: none;
+}
+
 h1 {
 	font-size: 1.4rem;
 	font-weight: 200;

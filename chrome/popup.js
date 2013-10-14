@@ -1,14 +1,16 @@
 // display a warning that the user has to sign in to her CC account
 function displayLoginWarning() {
-	$('main').prepend('<section class="card"><h1><strong class="warning">Sign In Required</strong></h1><h2>' + 
-		'Please <a href="#" class="warning">sign in</a> to your Connected Caching account!</h2></section>');
+	$('#signInWarning').show();
+	$('#signInLink').on('click', function() {
+		//
+	});
 }
 
 // display a warning that the user has to sign in to the target site
 function displayPlatformAuthWarning(platformName, authUrl) {
-	$('main').prepend('<section class="card"><h1><strong class="warning">Sign In Required</strong></h1><h2>' + 
-		'Please <a href="#" class="warning" id="platformSignIn">sign in</a> to your ' + platformName + ' account!</h2></section>');
-	$('#platformSignIn').on('click', function() {
+	$('#platformSignInWarning').show();
+	$('#platformSignInName').text(platformName);
+	$('#platformSignInLink').on('click', function() {
 		chrome.tabs.update({url: authUrl});
 		window.close();
 	});
